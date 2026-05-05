@@ -6,8 +6,8 @@ plugins {
 
 val platforms = setOf(
     rootProject.projects.bukkit,
-    rootProject.projects.bungeecord,
-    rootProject.projects.velocity,
+    //rootProject.projects.bungeecord,
+    //rootProject.projects.velocity,
     //rootProject.projects.sponge7,
     //rootProject.projects.sponge8
 ).map { it.dependencyProject }
