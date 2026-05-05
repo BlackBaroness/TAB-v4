@@ -8,15 +8,15 @@ val platforms = setOf(
     rootProject.projects.bukkit,
     rootProject.projects.bungeecord,
     rootProject.projects.velocity,
-    rootProject.projects.sponge7,
-    rootProject.projects.sponge8
+    //rootProject.projects.sponge7,
+    //rootProject.projects.sponge8
 ).map { it.dependencyProject }
 
-val fabrics = setOf(
+/*val fabrics = setOf<Project>(
     rootProject.projects.fabric,
     rootProject.projects.fabric.v1144,
     rootProject.projects.fabric.v1182
-).map { it.dependencyProject }
+).map { it.dependencyProject }*/
 
 tasks {
     shadowJar {
@@ -33,9 +33,9 @@ tasks {
             registerPlatform(it, it.tasks.named<ShadowJar>("shadowJar").get())
         }
 
-        fabrics.forEach {
+        /*fabrics.forEach {
             registerPlatform(it, it.tasks.named<org.gradle.jvm.tasks.Jar>("remapJar").get())
-        }
+        }*/
     }
     build {
         dependsOn(shadowJar)

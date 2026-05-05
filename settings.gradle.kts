@@ -8,7 +8,7 @@ dependencyResolutionManagement {
         maven("https://repo.viaversion.com/") // ViaVersion
         maven("https://repo.opencollab.dev/maven-snapshots/") // Floodgate
         maven("https://repo.purpurmc.org/snapshots") // Purpur
-        maven("https://repo.spongepowered.org/repository/maven-public/") // Sponge
+        //maven("https://repo.spongepowered.org/repository/maven-public/") // Sponge
         maven("https://jitpack.io") // PremiumVanish, Vault, YamlAssist, RedisBungee
         maven("https://repo.md-5.net/content/groups/public/") // LibsDisguises
         maven("https://nexus.codecrafter47.dyndns.eu/content/repositories/public/") // BungeeCord-proxy // I feel bad for doing this
@@ -31,9 +31,9 @@ include(":shared")
 include(":velocity")
 include(":bukkit")
 include(":bungeecord")
-include(":sponge7")
-include(":sponge8")
-include(":fabric")
-include(":fabric:v1_14_4")
-include(":fabric:v1_18_2")
+//include(":sponge7")
+//include(":sponge8")
+//include(":fabric")
+//include(":fabric:v1_14_4")
+//include(":fabric:v1_18_2")
 include(":jar")
