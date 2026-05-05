@@ -484,27 +484,25 @@ public class FeatureManager {
 
         // Must be loaded after: Sorting
         if (teams) {
-            if (unlimitedTags) {
-                NameTag unlimited = TAB.getInstance().getPlatform().getUnlimitedNameTags();
-                if (unlimited instanceof NameTagX) {
-                    featureManager.registerFeature(TabConstants.Feature.UNLIMITED_NAME_TAGS, unlimited);
-                    for (String message : new String[]{
-                            "---------------------------------------------------------------------",
-                            "You have unlimited nametag mode feature enabled.",
-                            "This feature is scheduled for removal in a future TAB release.",
-                            "Please considering the alternative solutions available to achieve your desired result.",
-                            "No bug reports with this feature will be accepted anymore.",
-                            "No support with this feature will be provided anymore.",
-                            "See https://gist.github.com/NEZNAMY/f4cabf2fd9251a836b5eb877720dee5c/ for more info.",
-                            "---------------------------------------------------------------------"
-                    }) {
-                        TAB.getInstance().getPlatform().logWarn(TabComponent.fromColoredText(message));
-                    }
-                } else {
-                    featureManager.registerFeature(TabConstants.Feature.NAME_TAGS, unlimited);
+            featureManager.registerFeature(TabConstants.Feature.NAME_TAGS, new NameTag());
+        }
+
+        if (unlimitedTags) {
+            NameTagX unlimited = TAB.getInstance().getPlatform().getUnlimitedNameTags();
+            if (unlimited != null) {
+                featureManager.registerFeature(TabConstants.Feature.UNLIMITED_NAME_TAGS, unlimited);
+                for (String message : new String[]{
+                        "---------------------------------------------------------------------",
+                        "You have unlimited nametag mode feature enabled.",
+                        "This feature is scheduled for removal in a future TAB release.",
+                        "Please considering the alternative solutions available to achieve your desired result.",
+                        "No bug reports with this feature will be accepted anymore.",
+                        "No support with this feature will be provided anymore.",
+                        "See https://gist.github.com/NEZNAMY/f4cabf2fd9251a836b5eb877720dee5c/ for more info.",
+                        "---------------------------------------------------------------------"
+                }) {
+                    TAB.getInstance().getPlatform().logWarn(TabComponent.fromColoredText(message));
                 }
-            } else {
-                featureManager.registerFeature(TabConstants.Feature.NAME_TAGS, new NameTag());
             }
         }
 

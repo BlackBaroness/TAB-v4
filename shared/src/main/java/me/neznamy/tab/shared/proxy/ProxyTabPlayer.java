@@ -83,7 +83,7 @@ public abstract class ProxyTabPlayer extends TabPlayer {
             settings = new PlayerJoin.UnlimitedNametagSettings(
                     nametagx.isDisableOnBoats(),
                     nametagx.isArmorStandsAlwaysVisible(),
-                    disabledNametags.get() || disabledUnlimitedNametags.get(),
+                    disabledUnlimitedNametags.get(),
                     nametagx.getDynamicLines(),
                     nametagx.getStaticLines()
             );

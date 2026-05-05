@@ -94,7 +94,6 @@ public class VehicleRefresher extends TabFeature implements JoinListener, QuitLi
             playersInVehicleArray = playersInVehicle.keySet().toArray(new TabPlayer[0]);
             if (feature.isDisableOnBoats() && p.unlimitedNametagData.onBoat) {
                 p.unlimitedNametagData.onBoat = false;
-                feature.updateTeamData(p);
             }
             feature.getArmorStandManager(p).updateVisibility(true);
         }
@@ -105,7 +104,6 @@ public class VehicleRefresher extends TabFeature implements JoinListener, QuitLi
             addToVehicle(p, vehicle);
             if (feature.isDisableOnBoats() && feature.getEntityType(vehicle).contains("boat")) {
                 p.unlimitedNametagData.onBoat = true;
-                feature.updateTeamData(p);
             }
             feature.getArmorStandManager(p).updateVisibility(true);
         }

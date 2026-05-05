@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.neznamy.tab.api.TabAPI;
 import me.neznamy.tab.api.bossbar.BossBarManager;
+import me.neznamy.tab.api.nametag.NameTagManager;
 import me.neznamy.tab.api.tablist.SortingManager;
 import me.neznamy.tab.api.tablist.layout.LayoutManager;
 import me.neznamy.tab.api.scoreboard.ScoreboardManager;
@@ -13,7 +14,6 @@ import me.neznamy.tab.shared.chat.EnumChatFormat;
 import me.neznamy.tab.shared.chat.TabComponent;
 import me.neznamy.tab.shared.config.helper.ConfigHelper;
 import me.neznamy.tab.shared.cpu.CpuManager;
-import me.neznamy.tab.shared.features.nametags.NameTag;
 import me.neznamy.tab.shared.platform.Platform;
 import me.neznamy.tab.shared.command.DisabledCommand;
 import me.neznamy.tab.shared.command.TabCommand;
@@ -272,7 +272,7 @@ public class TAB extends TabAPI {
     }
 
     @Override
-    public @Nullable NameTag getNameTagManager() {
+    public @Nullable NameTagManager getNameTagManager() {
         if (featureManager.isFeatureEnabled(TabConstants.Feature.NAME_TAGS)) return featureManager.getFeature(TabConstants.Feature.NAME_TAGS);
         return featureManager.getFeature(TabConstants.Feature.UNLIMITED_NAME_TAGS);
     }

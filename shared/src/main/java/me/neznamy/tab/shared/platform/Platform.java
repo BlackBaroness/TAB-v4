@@ -5,7 +5,7 @@ import me.neznamy.tab.shared.TabConstants;
 import me.neznamy.tab.shared.chat.TabComponent;
 import me.neznamy.tab.shared.features.bossbar.BossBarManagerImpl;
 import me.neznamy.tab.shared.features.injection.PipelineInjector;
-import me.neznamy.tab.shared.features.nametags.NameTag;
+import me.neznamy.tab.shared.features.nametags.unlimited.NameTagX;
 import me.neznamy.tab.shared.features.redis.RedisSupport;
 import me.neznamy.tab.shared.features.types.TabFeature;
 import me.neznamy.tab.shared.hook.PremiumVanishHook;
@@ -64,12 +64,12 @@ public interface Platform {
     @Nullable PipelineInjector createPipelineInjector();
 
     /**
-     * Returns nametag handler when unlimited nametag mode is enabled
-     * in config file.
+     * Returns unlimited nametag handler when unlimited nametag mode is enabled
+     * and supported by the platform.
      *
-     * @return  Nametag feature handler for unlimited name tags
+     * @return  feature handler for unlimited name tags or null if unsupported
      */
-    @NotNull NameTag getUnlimitedNameTags();
+    @Nullable NameTagX getUnlimitedNameTags();
 
     /**
      * Creates tab expansion instance and returns it

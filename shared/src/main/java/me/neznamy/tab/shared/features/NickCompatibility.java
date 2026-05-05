@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public class NickCompatibility extends TabFeature implements EntryAddListener {
 
-    @Nullable private final NameTag nameTags = TAB.getInstance().getNameTagManager();
+    @Nullable private final NameTag nameTags = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.NAME_TAGS);
     @Nullable private final BelowName belowname = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.BELOW_NAME);
     @Nullable private final YellowNumber yellownumber = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.YELLOW_NUMBER);
     @Nullable private final RedisSupport redis = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.REDIS_BUNGEE);

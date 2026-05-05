@@ -27,7 +27,7 @@ import me.neznamy.tab.shared.TAB;
 import me.neznamy.tab.shared.backend.BackendPlatform;
 import me.neznamy.tab.shared.features.PlaceholderManagerImpl;
 import me.neznamy.tab.shared.features.bossbar.BossBarManagerImpl;
-import me.neznamy.tab.shared.features.nametags.NameTag;
+import me.neznamy.tab.shared.features.nametags.unlimited.NameTagX;
 import me.neznamy.tab.shared.hook.LuckPermsHook;
 import me.neznamy.tab.shared.hook.PremiumVanishHook;
 import me.neznamy.tab.shared.placeholders.types.PlayerPlaceholderImpl;
@@ -147,12 +147,12 @@ public class BukkitPlatform implements BackendPlatform {
     }
 
     @Override
-    @NotNull
-    public NameTag getUnlimitedNameTags() {
+    @Nullable
+    public NameTagX getUnlimitedNameTags() {
         return BukkitReflection.getMinorVersion() >= 8 &&
                 PacketEntityView.isAvailable() &&
                 BukkitPipelineInjector.isAvailable() ?
-                new BukkitNameTagX(plugin) : new NameTag();
+                new BukkitNameTagX(plugin) : null;
     }
 
     @Override

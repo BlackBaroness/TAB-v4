@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
  * Interface for manipulating player name tags.
  * <p>
  * Instance can be obtained using {@link TabAPI#getNameTagManager()}.
- * This requires the Team feature to be enabled in config, otherwise the method will
+ * This requires either the Team feature or Unlimited name tag feature to be enabled in config, otherwise the method will
  * return {@code null}.
  */
 @SuppressWarnings("unused") // API class

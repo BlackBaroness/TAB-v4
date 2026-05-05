@@ -87,7 +87,7 @@ public class Sorting extends TabFeature implements SortingManager, JoinListener,
     @Override
     public void load() {
         // All of these features are instantiated after this one, so they must be detected later
-        nameTags = TAB.getInstance().getNameTagManager();
+        nameTags = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.NAME_TAGS);
         layout = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.LAYOUT);
         redis = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.REDIS_BUNGEE);
         for (TabPlayer all : TAB.getInstance().getOnlinePlayers()) {
@@ -206,7 +206,7 @@ public class Sorting extends TabFeature implements SortingManager, JoinListener,
         if (Objects.equals(p.sortingData.forcedTeamName, name)) return;
         if (name != null && name.length() > Limitations.TEAM_NAME_LENGTH) throw new IllegalArgumentException("Team name cannot be more than 16 characters long.");
         if (name != null) p.sortingData.teamNameNote = "Set using API";
-        NameTag nametag = TAB.getInstance().getNameTagManager();
+        NameTag nametag = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.NAME_TAGS);
         if (nametag != null) nametag.unregisterTeam(p, p.sortingData.getShortTeamName());
         p.sortingData.forcedTeamName = name;
         if (nametag != null) nametag.registerTeam(p);

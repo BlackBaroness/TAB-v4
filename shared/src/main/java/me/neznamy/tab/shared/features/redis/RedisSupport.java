@@ -176,8 +176,8 @@ public abstract class RedisSupport extends TabFeature implements JoinListener, Q
                     TabConstants.Feature.PLAYER_LIST));
             features.add(redisPlayerList);
         }
-        if (TAB.getInstance().getNameTagManager() != null) {
-            redisTeams = new RedisTeams(this, TAB.getInstance().getNameTagManager());
+        if (TAB.getInstance().getFeatureManager().isFeatureEnabled(TabConstants.Feature.NAME_TAGS)) {
+            redisTeams = new RedisTeams(this, TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.NAME_TAGS));
             features.add(redisTeams);
         }
         if (TAB.getInstance().getFeatureManager().isFeatureEnabled(TabConstants.Feature.GLOBAL_PLAYER_LIST)) {

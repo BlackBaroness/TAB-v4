@@ -22,7 +22,7 @@ public class SetCollisionCommand extends SubCommand {
 
     @Override
     public void execute(@Nullable TabPlayer sender, @NotNull String[] args) {
-        NameTag feature = TAB.getInstance().getNameTagManager();
+        NameTag feature = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.NAME_TAGS);
         if (feature == null) {
             sendMessage(sender, getMessages().getTeamFeatureRequired());
             return;

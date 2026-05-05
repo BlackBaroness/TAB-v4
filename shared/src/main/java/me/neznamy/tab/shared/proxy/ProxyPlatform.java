@@ -13,7 +13,7 @@ import me.neznamy.tab.api.placeholder.Placeholder;
 import me.neznamy.tab.shared.platform.Platform;
 import me.neznamy.tab.shared.TAB;
 import me.neznamy.tab.shared.features.PlaceholderManagerImpl;
-import me.neznamy.tab.shared.features.nametags.NameTag;
+import me.neznamy.tab.shared.features.nametags.unlimited.NameTagX;
 import me.neznamy.tab.shared.placeholders.UniversalPlaceholderRegistry;
 import me.neznamy.tab.shared.proxy.features.unlimitedtags.ProxyNameTagX;
 import me.neznamy.tab.shared.proxy.message.incoming.*;
@@ -104,7 +104,7 @@ public abstract class ProxyPlatform implements Platform {
     }
 
     @Override
-    public @NotNull NameTag getUnlimitedNameTags() {
+    public @NotNull NameTagX getUnlimitedNameTags() {
         return new ProxyNameTagX();
     }
 
