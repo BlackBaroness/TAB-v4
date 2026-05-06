@@ -72,7 +72,7 @@ public class LayoutManagerImpl extends TabFeature implements LayoutManager, Join
     @Override
     public void load() {
         playerList = TAB.getInstance().getFeatureManager().getFeature(TabConstants.Feature.PLAYER_LIST);
-        teamsEnabled = TAB.getInstance().getFeatureManager().isFeatureEnabled(TabConstants.Feature.NAME_TAGS);
+        teamsEnabled = TAB.getInstance().getNameTagManager() != null;
         TAB.getInstance().getFeatureManager().registerFeature(TabConstants.Feature.LAYOUT_LATENCY, new LayoutLatencyRefresher(this));
         for (TabPlayer p : TAB.getInstance().getOnlinePlayers()) {
             onJoin(p);
